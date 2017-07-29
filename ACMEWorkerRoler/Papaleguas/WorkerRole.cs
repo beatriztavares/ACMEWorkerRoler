@@ -17,8 +17,8 @@ namespace Papaleguas
     {
         private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private readonly ManualResetEvent runCompleteEvent = new ManualResetEvent(false);
-        static CloudQueue papaleguasQueue, coioteQueue;
-        const string MessageText = "I'm papaléguas!";
+        static CloudQueue papaleguasQueue, coyoteQueue;
+        const string MessageText = "I'm papa-léguas!";
 
         public void Connect()
         {
@@ -32,8 +32,8 @@ namespace Papaleguas
             }
 
             var cloudQueueClient = cloudStorageAccount.CreateCloudQueueClient();
-            papaleguasQueue = cloudQueueClient.GetQueueReference("papaleguas");
-            coioteQueue = cloudQueueClient.GetQueueReference("coiote");
+            papaleguasQueue = cloudQueueClient.GetQueueReference("papa-leguas");
+            coyoteQueue = cloudQueueClient.GetQueueReference("coyote");
 
             // Note: Usually this statement can be executed once during application startup or maybe even never in the application.
             //       A queue in Azure Storage is often considered a persistent item which exists over a long time.
@@ -50,21 +50,21 @@ namespace Papaleguas
 
         public void GetMessage()
         {
-            var cloudQueueMessage = coioteQueue.GetMessage();
+            var cloudQueueMessage = coyoteQueue.GetMessage();
 
             if (cloudQueueMessage == null)
             {
                 return;
             }
 
-            Console.WriteLine("Papaleguas readed: " + cloudQueueMessage.AsString);
+            Console.WriteLine("Papa-leguas readed: " + cloudQueueMessage.AsString);
 
-            coioteQueue.DeleteMessage(cloudQueueMessage);
+            coyoteQueue.DeleteMessage(cloudQueueMessage);
         }
 
         public override void Run()
         {
-            Trace.TraceInformation("Papaleguas is running");
+            Trace.TraceInformation("Papa-leguas is running");
 
             try
             {
@@ -92,21 +92,21 @@ namespace Papaleguas
 
             Connect();
 
-            Trace.TraceInformation("Papaleguas has been started");
+            Trace.TraceInformation("Papa-leguas has been started");
 
             return result;
         }
 
         public override void OnStop()
         {
-            Trace.TraceInformation("Papaleguas is stopping");
+            Trace.TraceInformation("Papa-leguas is stopping");
 
             this.cancellationTokenSource.Cancel();
             this.runCompleteEvent.WaitOne();
 
             base.OnStop();
 
-            Trace.TraceInformation("Papaleguas has stopped");
+            Trace.TraceInformation("Papa-leguas has stopped");
         }
 
         private async Task RunAsync(CancellationToken cancellationToken)
@@ -117,7 +117,7 @@ namespace Papaleguas
                 Trace.TraceInformation("Working");
                 SendMessage();
                 GetMessage();
-                await Task.Delay(2000);
+                await Task.Delay(1000);
             }
         }
     }

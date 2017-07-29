@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "ACMEWorkerRoler", "ACMEWorkerRoler\ACMEWorkerRoler.ccproj", "{4F092EF5-A3CC-4783-BFBE-EEEC7CB254D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coiote", "Coiote\Coiote.csproj", "{F38E112E-A7F0-47D3-9739-B9A94DBF18D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coyote", "Coiote\Coyote.csproj", "{F38E112E-A7F0-47D3-9739-B9A94DBF18D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Papaleguas", "Papaleguas\Papaleguas.csproj", "{E2EC339F-3C4D-4512-8839-1CBDC7C16509}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Papa-leguas", "Papaleguas\Papa-leguas.csproj", "{E2EC339F-3C4D-4512-8839-1CBDC7C16509}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

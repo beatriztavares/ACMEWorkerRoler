@@ -1,0 +1,15 @@
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] Emulator config file set to C:\Users\Beatriz Tavares\Desktop\projetos\ACMEWorkerRoler\ACMEWorkerRoler\ACMEWorkerRoler\csx\Debug\roles\Coyote\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] DiagnosticsStoreRootPath set to: C:\Users\Beatriz Tavares\AppData\Local\dftmp\Resources\46857767-2d63-4639-9037-7dafd1fe725a
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] Loading config file: C:\Users\Beatriz Tavares\Desktop\projetos\ACMEWorkerRoler\ACMEWorkerRoler\ACMEWorkerRoler\csx\Debug\roles\Coyote\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] Config file to read: C:\Users\Beatriz Tavares\Desktop\projetos\ACMEWorkerRoler\ACMEWorkerRoler\ACMEWorkerRoler\csx\Debug\roles\Coyote\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] Checking VM Type
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] Emulator config file set to C:\Users\Beatriz Tavares\Desktop\projetos\ACMEWorkerRoler\ACMEWorkerRoler\ACMEWorkerRoler\csx\Debug\roles\Coyote\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] Extension set to Emulator Mode
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] Reading XML configuration file
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] Bypassing private config decryption
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] Stopping the running plugin, if any
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] No DiagnosticsPlugin is running.
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:53] Killing any DiagnosticsPlugin that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:54] Killing any MonAgentHost that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:54] Diagnostics plugin stopped successfully
+DiagnosticsPluginLauncher.exe Information: 0 : [29/07/2017 17:50:54] Resetting DiagnosticPlugin

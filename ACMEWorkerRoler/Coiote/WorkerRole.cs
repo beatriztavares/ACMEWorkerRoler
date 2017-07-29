@@ -11,14 +11,14 @@ using Microsoft.WindowsAzure.ServiceRuntime;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Queue;
 
-namespace Coiote
+namespace Coyote
 {
     public class WorkerRole : RoleEntryPoint
     {
         private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private readonly ManualResetEvent runCompleteEvent = new ManualResetEvent(false);
-        static CloudQueue papaleguasQueue, coioteQueue;
-        const string MessageText = "I'm Coiote!";
+        static CloudQueue papaleguasQueue, coyoteQueue;
+        const string MessageText = "I'm Coyote!";
 
         public void Connect()
         {
@@ -32,8 +32,8 @@ namespace Coiote
             }
 
             var cloudQueueClient = cloudStorageAccount.CreateCloudQueueClient();
-            papaleguasQueue = cloudQueueClient.GetQueueReference("papaleguas");
-            coioteQueue = cloudQueueClient.GetQueueReference("coiote");
+            papaleguasQueue = cloudQueueClient.GetQueueReference("papa-leguas");
+            coyoteQueue = cloudQueueClient.GetQueueReference("coyote");
 
             // Note: Usually this statement can be executed once during application startup or maybe even never in the application.
             //       A queue in Azure Storage is often considered a persistent item which exists over a long time.
@@ -45,7 +45,7 @@ namespace Coiote
         {
             var message = new CloudQueueMessage(MessageText);
 
-            coioteQueue.AddMessage(message);
+            coyoteQueue.AddMessage(message);
         }
 
         public void GetMessage()
@@ -57,14 +57,14 @@ namespace Coiote
                 return;
             }
 
-            Console.WriteLine("Coiote readed: " + cloudQueueMessage.AsString);
+            Console.WriteLine("Coyote readed: " + cloudQueueMessage.AsString);
 
             papaleguasQueue.DeleteMessage(cloudQueueMessage);
         }
 
         public override void Run()
         {
-            Trace.TraceInformation("Coiote is running");
+            Trace.TraceInformation("Coyote is running");
 
             try
             {
@@ -92,21 +92,21 @@ namespace Coiote
 
             Connect();
 
-            Trace.TraceInformation("Coiote has been started");
+            Trace.TraceInformation("Coyote has been started");
 
             return result;
         }
 
         public override void OnStop()
         {
-            Trace.TraceInformation("Coiote is stopping");
+            Trace.TraceInformation("Coyote is stopping");
 
             this.cancellationTokenSource.Cancel();
             this.runCompleteEvent.WaitOne();
 
             base.OnStop();
 
-            Trace.TraceInformation("Coiote has stopped");
+            Trace.TraceInformation("Coyote has stopped");
         }
 
         private async Task RunAsync(CancellationToken cancellationToken)
@@ -117,7 +117,7 @@ namespace Coiote
                 Trace.TraceInformation("Working");
                 SendMessage();
                 GetMessage();
-                await Task.Delay(1000);
+                await Task.Delay(2000);
             }
         }
     }
